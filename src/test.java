@@ -1,7 +1,6 @@
 /*
- * Tingimuslause kasutamise näide
  * autor - Gardo Kirsipuu
- * ülesanne 2.2
+ * ülesanne 1.4a
  * */
 
 import java.util.Scanner;
@@ -12,18 +11,12 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale mida tuleb sisestada
-        System.out.println("Palun sisesta punktide summa: ");
-        // salvestama kasutaja sisestatud väärtus
-        double punktid = sisend.nextDouble();
-        // kontroll
-        if (punktid >= 0 && punktid < 66) {
-            System.out.println("Vähem kui kandideerimiseks vajalik");
-        } else if (punktid >= 66 && punktid < 85) {
-            System.out.println("Kandideerimine vastuvõtule");
-        } else if (punktid >= 85 && punktid <= 100) {
-            System.out.println("Vastuvõtt tagatud");
-        } else if (punktid < 0 || punktid > 100) {
-            System.out.println("Vigane punktisumma");
-        }
+        System.out.println("Sisestage ainepunktide arv: ");
+        int ainepunktideArv = sisend.nextInt();
+        System.out.println("Sisestage nadalate arv: ");
+        int nadalateArv = sisend.nextInt();
+        int ajakulu = ainepunktideArv * 26;
+        double nadalaAjakulu = (double) ajakulu / nadalateArv;
+        System.out.println(Math.round(nadalaAjakulu));
     }
 }
