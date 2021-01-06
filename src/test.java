@@ -6,7 +6,7 @@
 /*
  * while tsükkel
  * autor Gardo Kirsipuu
- * Ülesanne 3.3
+ * Ülesanne 3.4a
  */
 
 import java.util.Scanner;
@@ -20,18 +20,15 @@ public class test {
         System.out.println("Sisesta ringide arv: ");
         // salvestame kasutaja sisestatud väärtuse
         int ringideArv = sisend.nextInt();
-        int joostud = 0;
+        int i = 0;
         int porgandid = 0;
-        int mitu = 2;
         // korduv tegevus
         // kontroll
-        while (joostud < ringideArv) {
-            if (joostud % 2 == 0) {
-                porgandid += mitu;
-                mitu += 2;
-            }
-            joostud++;
+        while (ringideArv > i) {
+            i++;
+            porgandid += i * (i + 1) / 2;
         }
-        System.out.println(porgandid);
+        System.out.print("porgandite koguarv on ");
+        System.out.print(porgandid);
     }
 }
