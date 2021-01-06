@@ -6,7 +6,7 @@
 /*
  * while tsükkel
  * autor Gardo Kirsipuu
- * Ülesanne 3.1
+ * Ülesanne 3.3
  */
 
 import java.util.Scanner;
@@ -21,12 +21,13 @@ public class test {
         // salvestame kasutaja sisestatud väärtuse
         int taringuteArv = sisend.nextInt();
         // korduv tegevus
-        int taring = (int) Math.round(Math.random() * 6);
-        System.out.println(taring);
         // kontroll
-        while (taring != taringuteArv) {
-            taring = (int) Math.round(Math.random() * 6);
+        while (true) {
+            int taring = (int) Math.round(Math.random() * 6);
             System.out.println(taring);
+            if (taring == taringuteArv) {
+                break;
+            }
         }
     }
 }
