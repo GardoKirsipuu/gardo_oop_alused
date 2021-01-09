@@ -6,17 +6,16 @@
 /*
  * meetod + return - näide
  * autor Gardo Kirsipuu
- * Ülesanne 6.1
+ * Ülesanne 6.2
  */
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class test {
-    // banner meetod
-    static String banner(String reklaamlause) {
-        String reklaamlauseSuurteTahtedega = reklaamlause.toUpperCase();
-        return reklaamlauseSuurteTahtedega;
+    // mahlapakkideArv meetod
+    static int mahlapakkideArv(double ounteKogus) {
+        int pakkideArv = (int) Math.round(ounteKogus * 0.4 / 3);
+        return pakkideArv;
     }
 
     // main meetod
@@ -25,18 +24,10 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale mida tuleb sisestada
-        System.out.println("Mitu korda kuvada reklaamlauset?: ");
+        System.out.println("Sisestage õunte kogus kilogrammides: ");
         // salvestame kasutaja sisestatud väärtuse
-        int kordamine = sisend.nextInt();
-        // sammuti sisendid
-        sisend = new Scanner(System.in);
-        System.out.println("Sisesta reklaamlause");
-        String lause = sisend.nextLine();
-        // kordamine
-        int kord = 1;
-        while (kord <= kordamine) {
-            System.out.println(banner(lause));
-            kord++;
-        }
+        double ounteKogus = sisend.nextDouble();
+        // arvutamine
+        System.out.println(mahlapakkideArv(ounteKogus));
     }
 }
