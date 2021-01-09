@@ -6,16 +6,16 @@
 /*
  * meetod + return - näide
  * autor Gardo Kirsipuu
- * Ülesanne 6.2
+ * Ülesanne 6.3
  */
 
 import java.util.Scanner;
 
 public class test {
-    // mahlapakkideArv meetod
-    static int mahlapakkideArv(double ounteKogus) {
-        int pakkideArv = (int) Math.round(ounteKogus * 0.4 / 3);
-        return pakkideArv;
+    // eelarve meetod
+    static int eelarve(int kulalisteArv) {
+        int summa = kulalisteArv * 10 + 55;
+        return summa;
     }
 
     // main meetod
@@ -24,10 +24,13 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale mida tuleb sisestada
-        System.out.println("Sisestage õunte kogus kilogrammides: ");
+        System.out.println("Mitu inimest on kutsutud?: ");
         // salvestame kasutaja sisestatud väärtuse
-        double ounteKogus = sisend.nextDouble();
+        int kutsutud = sisend.nextInt();
+        System.out.println("Mitu inimest tuleb?: ");
+        int tuleb = sisend.nextInt();
         // arvutamine
-        System.out.println(mahlapakkideArv(ounteKogus));
+        System.out.println("Maksimaalne eelarve: " + eelarve(kutsutud) + "€");
+        System.out.println("Minimaalne eelarve: " + eelarve(tuleb) + "€");
     }
 }
