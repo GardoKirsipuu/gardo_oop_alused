@@ -6,16 +6,18 @@
 /*
  * meetod + return - näide
  * autor Gardo Kirsipuu
- * Ülesanne 6.3
+ * Ülesanne 6.4a
  */
 
 import java.util.Scanner;
 
 public class test {
-    // eelarve meetod
-    static int eelarve(int kulalisteArv) {
-        int summa = kulalisteArv * 10 + 55;
-        return summa;
+    // tervitus meetod
+    static Object tervitus(int kulalisteArv) {
+        System.out.println("Võõrustaja: \"Tere!\"");
+        System.out.println("Täna " + kulalisteArv + ". korda tervitada, mõtistkleb võõrustaja.");
+        System.out.println("Külaline:  \"Tere, suur tänu kutse eest!\"");
+        return null;
     }
 
     // main meetod
@@ -24,13 +26,14 @@ public class test {
         // lubame kasutajale sisestada midagi
         Scanner sisend = new Scanner(System.in);
         // selgitame kasutajale mida tuleb sisestada
-        System.out.println("Mitu inimest on kutsutud?: ");
+        System.out.println("Sisestage külaliste arv: ");
         // salvestame kasutaja sisestatud väärtuse
-        int kutsutud = sisend.nextInt();
-        System.out.println("Mitu inimest tuleb?: ");
-        int tuleb = sisend.nextInt();
-        // arvutamine
-        System.out.println("Maksimaalne eelarve: " + eelarve(kutsutud) + "€");
-        System.out.println("Minimaalne eelarve: " + eelarve(tuleb) + "€");
+        int kulalisteArv = sisend.nextInt();
+        int kord = 1;
+        // tsükkel
+        while (kulalisteArv >= kord) {
+            tervitus(kord);
+            kord++;
+        }
     }
 }
