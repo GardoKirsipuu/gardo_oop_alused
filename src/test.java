@@ -6,19 +6,37 @@
 /*
  * massiivid
  * autor Gardo Kirsipuu
- * ülesanne 5.1
+ * ülesanne 5.3
  */
 
-
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        int[] vastuvoetud = {2803, 2626, 2359, 1927, 2236, 2281, 2394, 2484, 2468};
-        Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisesta aasta: ");
-        int aasta = sisend.nextInt();
-        int massiiviIndeks = aasta - 2011;
-        System.out.println("Vastuvõetud on " + vastuvoetud[massiiviIndeks]);
+        // massiiv faili sisu hoidmiseks
+        ArrayList<Double> palk = new ArrayList<>();
+        // määrame fail ja kontrollime, kas on võiamlik lugeda andmed
+        File fail = new File("C:\\Users\\gardo\\IdeaProjects\\oop_alused\\src\\konto.txt");
+        Scanner sisendFailist = null;
+        try {
+            sisendFailist = new Scanner(fail);
+        } catch (Exception e) {
+            System.out.println("Faili pole - " + e.getMessage());
+        }
+        // loeme failist
+        while (sisendFailist.hasNextLine()) {
+            Double rida = sisendFailist.nextDouble();
+            palk.add(rida); // lisame loetud väärtus nimekirja sisse
+        }
+        sisendFailist.close();
+        // vaatame nimekirja sisu
+        for (int i = 0; i < palk.size(); i++) {
+            if (palk.get(i) > 0.0) {
+                System.out.println(palk.get(i));
+            }
+        }
+
     }
 }
