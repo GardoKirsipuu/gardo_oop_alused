@@ -1,29 +1,21 @@
 /*
- * autor - Gardo Kirsipuu
- * ülesanne 2.3b
- * */
-
-/*
  * massiivid
  * autor Gardo Kirsipuu
- * ülesanne 5.4a
+ * ülesanne 5.4c
  */
 
 import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
         // massiiv faili sisu hoidmiseks
-        ArrayList<String> palk = new ArrayList<>();
-        ArrayList<String> laulud = new ArrayList<>();
-        // faili nime küsimine
-        Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisestage faili nimi: ");
-        String failiNimi = sisend.nextLine();
+        ArrayList<String> opilased = new ArrayList<>();
         // määrame fail ja kontrollime, kas on võiamlik lugeda andmed
-        File fail = new File("C:\\Users\\gardo\\IdeaProjects\\oop_alused\\src\\" + failiNimi);
+        File fail = new File("C:\\Users\\gardo\\IdeaProjects\\oop_alused\\src\\nimekiri.txt");
         Scanner sisendFailist = null;
         try {
             sisendFailist = new Scanner(fail);
@@ -33,19 +25,23 @@ public class test {
         // loeme failist
         while (sisendFailist.hasNextLine()) {
             String rida = sisendFailist.nextLine();
-            palk.add(rida); // lisame loetud väärtus nimekirja sisse
+            opilased.add(rida); // lisame loetud väärtus nimekirja sisse
         }
         sisendFailist.close();
-        // järjekord
-        int jarjekord = 1;
+        // loome tänase kuupäeva
+        LocalDateTime tananeKuupaev = LocalDateTime.now();
+        System.out.println("Tänane kuupäev ilma vorminduseta " + tananeKuupaev);
+        DateTimeFormatter kuupaevaVormindus = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:MM:ss");
+        String tananeKuupaevVormindatud = tananeKuupaev.format(kuupaevaVormindus);
+        System.out.println("Tänane vormindatud kuupäev " + tananeKuupaevVormindatud);
+        // otsime vajaliku inimese nimekirjast
+        int indeks = Integer.parseInt(tananeKuupaevVormindatud);
+        System.out.println(opilased.get(indeks - 1));
         // vaatame nimekirja sisu
-        for (int i = 0; i < palk.size(); i++) {
-            System.out.println(jarjekord + ". " + palk.get(i));
-            jarjekord++;
+        /*
+        for (int i = 0; i < opilased.size(); i++) {
+            System.out.println(i + " " + opilased.get(i));
         }
-        System.out.println("Mis laulu soovid?: ");
-        int lauluNimi = sisend.nextInt();
-        System.out.println(palk.get(lauluNimi - 1));
+        */
     }
-
-    }
+}
