@@ -13,75 +13,31 @@
  Programm peab olema piisavalt dokumenteeritud
  */
 
-import java.util.HashMap;
-import java.util.Scanner;
 
 public class test {
-    // konto loomine
-    static HashMap<String, Integer> kontoLoomine() {
-        HashMap<String, Integer> kontod = new HashMap<String, Integer>();
-        // konto nime sisestamine
-        Scanner sisend = new Scanner(System.in);
-        System.out.print("Sisesta konto nimi: ");
-        String nimi = sisend.nextLine();
-        // konto raha sisestamine
-        System.out.print("Sisesta konto summa: ");
-        Integer raha = sisend.nextInt();
-        // nime ja raha HashMapi sisestamine
-        kontod.put(nimi, raha);
-        // hashmapi väljastamine
-        return kontod;
-    }
-
     public static void main(String[] args) {
-        HashMap kontod = new HashMap();
-        Scanner sisend = new Scanner(System.in);
-        boolean stop = true;
-        while (stop) {
-            System.out.println("Konto loomiseks kirjuta 1");
-            System.out.println("Kontole raha kandmiseks kirjuta 2");
-            System.out.println("Kontolt raha võtmis5eks kirjuta 3");
-            System.out.println("Kontolt kontole raha kandmiseks kirjuta 4");
-            System.out.println("Programmi kinni panemiseks kirjuta 5");
-            String valik = sisend.nextLine();
-            if (valik.equals("1")) {
-                kontod.putAll(kontoLoomine());
-            }
-            if (valik.equals("2")) {
-                System.out.println(kontod);
-                System.out.print("Kellele tahad raha kanda?: ");
-                String nimiKandmine = sisend.nextLine();
-                System.out.print("Kui palju raha tahad üles kanda?: ");
-                int summaKandmine = sisend.nextInt();
-                kontod.put(nimiKandmine, kontod.get(nimiKandmine) + summaKandmine);
-            }
-            if (valik.equals("3")) {
+        // loo konto tüüpi objekt nimega gardoKonto
+        Konto gardoKontoSEB = new Konto();
+        Konto gardoKontoSWED = new Konto();
+        // lisan konkreetsed väärtused
+        gardoKontoSEB.looKonto("Gardo", 0.0);
+        gardoKontoSWED.looKonto("Gardo", 0.0);
 
-            }
-            if (valik.equals("4")) {
-
-            }
-            if (valik.equals("5")) {
-                System.out.println(kontod);
-                stop = false;
-            }
-        }
+        gardoKontoSEB.lisaRaha(20.0);
+        gardoKontoSWED.lisaRaha(-50.0);
+        // väljastame tulemused
+        System.out.println("SEB");
+        System.out.println("Konto omanik = " + gardoKontoSEB.omanik);
+        System.out.println("Konto bilans = " + gardoKontoSEB.bilans);
+        gardoKontoSEB.votaRaha(15.0);
+        System.out.println("Konto bilans = " + gardoKontoSEB.bilans);
+        gardoKontoSEB.teeYlekanne(gardoKontoSWED, 5.0);
+        System.out.println("Konto bilans = " + gardoKontoSEB.bilans);
+        gardoKontoSEB.teeYlekanne(gardoKontoSWED, 5.0);
+        gardoKontoSEB.votaRaha(20.0);
+        System.out.println("Konto bilans = " + gardoKontoSEB.bilans);
+        System.out.println("SWED");
+        System.out.println("Konto omanik = " + gardoKontoSWED.omanik);
+        System.out.println("Konto bilans = " + gardoKontoSWED.bilans);
     }
 }
-    /*
-    public static void main(String[] args) {
-        HashMap<String, String> grupp = new HashMap<String, String>();
-        grupp.put("matti", "mage");
-        grupp.put("mikael", "miku");
-        grupp.put("arto", "arppa");
-        /**
-        for (String nimi: grupp.keySet()) {
-            System.out.println(nimi + " - " + grupp.get(nimi));
-        }**
-        Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisesta nimi: ");
-        String nimi = sisend.nextLine();
-        nimi = nimi.toLowerCase(Locale.ROOT);
-        System.out.println(nimi + " - " + grupp.get(nimi));
-    }
-    */
