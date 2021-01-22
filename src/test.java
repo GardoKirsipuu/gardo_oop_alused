@@ -1,22 +1,9 @@
 public class test {
     public static void main(String[] args) {
-        KahanevLoendur loendur = new KahanevLoendur(100);
+        Menyy kohvik = new Menyy();
+        kohvik.lisaSook("Sai");
+        kohvik.lisaSook("Sai");
 
-        loendur.valjastaVaartus();
-
-        loendur.kahane();
-        ;
-        loendur.valjastaVaartus();
-
-        loendur.kahane();
-        loendur.valjastaVaartus();
-
-        loendur.reset();
-        loendur.valjastaVaartus();
-
-        loendur.algvaartusta();
-        loendur.valjastaVaartus();
-
-
+        System.out.println(kohvik);
     }
 }
