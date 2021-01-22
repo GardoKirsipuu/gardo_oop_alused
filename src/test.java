@@ -1,9 +1,11 @@
 public class test {
     public static void main(String[] args) {
         Menyy kohvik = new Menyy();
-        kohvik.lisaSook("Sai");
-        kohvik.lisaSook("Sai");
+        kohvik.lisaSook("Burger");
+        kohvik.lisaSook("Fish'n'Chips");
+        kohvik.lisaSook("Fish'n'Chips");
+        kohvik.lisaSook("Hapukapsas");
 
-        System.out.println(kohvik);
+        kohvik.valjastaMenyy();
     }
 }
