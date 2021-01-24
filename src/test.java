@@ -7,5 +7,7 @@ public class test {
         kohvik.lisaSook("Hapukapsas");
 
         kohvik.valjastaMenyy();
+        kohvik.puhastaMenyy();
+        kohvik.valjastaMenyy();
     }
 }
