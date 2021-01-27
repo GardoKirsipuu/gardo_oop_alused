@@ -15,7 +15,9 @@ public class test {
         john.setPikkus(175);
         john.setMass(64);
 
-        System.out.println(matti.getNimi() + ", kehamassiindeks: " + matti.kmi());
-        System.out.println(john.getNimi() + ", kehamassiindeks: " + john.kmi());
+        System.out.print(matti.getNimi() + ", kehamassiindeks: ");
+        System.out.printf("%5.2f%n", matti.kmi());
+        System.out.print(john.getNimi() + ", kehamassiindeks: ");
+        System.out.printf("%5.2f%n", john.kmi());
     }
 }
