@@ -1,21 +1,49 @@
 /*
 autor Gardo Kirsipuu
-01.02
+03.02
 ülesanne 4
  */
 
+import java.util.ArrayList;
+
 public class test {
     public static void main(String[] args) {
-        Auto auto1 = new Auto();
-        auto1.km = 100;
+        ArrayList<Sodur> armee1 = new ArrayList<>();
+        ArrayList<Sodur> armee2 = new ArrayList<>();
 
-        Auto auto2 = new Auto();
-        auto2.km = 85;
+        for (int kord = 1; kord <= 20; kord++) {
+            int armeeNr = (int) Math.round(Math.random() * 2);
+            if (armeeNr == 1) {
+                armee1.add(new Sodur(armeeNr));
+            }
+            if (armeeNr == 2) {
+                armee2.add(new Sodur(armeeNr));
+            }
+        }
 
-        System.out.println("Auto1 läbitud teekond = " + auto1.km);
-        System.out.println("Auto2 läbitud teekond = " + auto2.km);
+        Ulem ulem1 = new Ulem(1);
+        Ulem ulem2 = new Ulem(2);
 
-        System.out.println(Auto.km);
+
+        for (Sodur sodur : armee1) {
+            sodur.info();
+
+        }
+
+        for (Sodur sodur : armee2) {
+            sodur.info();
+        }
+
+        if (armee1.size() > armee2.size()) {
+            ulem1.tostaTase();
+        } else {
+            ulem2.tostaTase();
+        }
+
+        System.out.print("1. armee ulemuse tase on = ");
+        ulem1.info();
+        System.out.print("2. armee ulemuse tase on = ");
+        ulem2.info();
 
     }
 }
