@@ -22,5 +22,12 @@ public class test {
 
         resto1.teenindatudKylalisedPaevas(44);
 
+        JaatiseKiosk jaatis1 = new JaatiseKiosk("Premia", "jaatis");
+        jaatis1.jaatiseLisamine("Maasika jäätis");
+        jaatis1.jaatiseLisamine("Sokolaadi jäätis");
+        jaatis1.jaatiseLisamine("Vanilje jäätis");
+
+        System.out.println(jaatis1.toString());
+
     }
 }

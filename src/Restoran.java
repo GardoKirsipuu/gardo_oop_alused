@@ -3,14 +3,14 @@ public class Restoran {
     private String soogiTyyp;
     private int kylalisteArv = 0;
 
-    public Restoran(String nimi, String sook) {
-        this.restoraniNimi = nimi;
-        this.soogiTyyp = sook;
+    public Restoran(String restoraniNimi, String soogiTyyp) {
+        this.restoraniNimi = restoraniNimi;
+        this.soogiTyyp = soogiTyyp;
     }
 
     @Override
     public String toString() {
-        return "Tere tulemast restorani " + this.restoraniNimi + ". Siin pakume " + this.soogiTyyp + ".";
+        return "Tere tulemast restorani " + this.restoraniNimi + ". Siin pakume " + this.soogiTyyp;
     }
 
     public void avaRestoran() {
