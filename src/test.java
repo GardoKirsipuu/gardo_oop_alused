@@ -13,8 +13,14 @@ public class test {
         Restoran resto3 = new Restoran("resto3", "pitsa");
 
         resto1.avaRestoran();
+        resto1.teenindatudKylalisedPaevas(24);
+
         resto2.avaRestoran();
+        resto2.teenindatudKylalisedPaevas(43);
+
         resto3.avaRestoran();
+
+        resto1.teenindatudKylalisedPaevas(44);
 
     }
 }
