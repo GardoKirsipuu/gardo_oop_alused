@@ -4,4 +4,8 @@ public class AknadUksed {
     public AknadUksed(Double laius, Double korgus) {
         this.pindala = laius * korgus;
     }
+
+    public Double getPindala() {
+        return pindala;
+    }
 }
