@@ -1,6 +1,6 @@
 /*
 autor Gardo Kirsipuu
-08.02
+10.02
 ülesanne
  */
 
@@ -8,9 +8,21 @@ import java.util.ArrayList;
 
 public class test {
     public static void main(String[] args) {
-        Tuba tuba1 = new Tuba(6.0, 3.0, 2.7);
+        Sein seinPohi = new Sein("põhi sein");
+        Sein seinLouna = new Sein("lõuna sein");
+        Sein seinLaane = new Sein("Lääne sein");
+        Sein seinIda = new Sein("ida sein");
 
-        System.out.println(tuba1.getPindala());
+        Lagi lagi = new Lagi(2.5, "helesinine");
 
+
+        Voodi voodi = new Voodi("kahele", 2, 2, 1, 70);
+
+        Lamp lamp = new Lamp("Klassikaline", false);
+
+        Magamistuba magamistuba = new Magamistuba("külaliste magamistuba", seinPohi, seinLouna, seinLaane, seinIda, lagi, voodi, lamp);
+        magamistuba.valmistaVoodi();
+        magamistuba.valmistaLamp();
+        System.out.println(magamistuba.getLamp().isSisseLulitatud());
     }
 }
